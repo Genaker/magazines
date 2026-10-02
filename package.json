@@ -1,0 +1,33 @@
+{
+    "name": "magazines",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build && php artisan static-version:bump",
+        "dev": "vite",
+        "test:e2e": "sh docker/e2e.sh",
+        "test:e2e:single-tenant": "sh docker/e2e.sh --project=single-tenant",
+        "test:e2e:multi-tenant": "sh docker/e2e.sh --project=multi-tenant"
+    },
+    "engines": {
+        "node": ">=20.18.0"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.52.0",
+        "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/vite": "^4.0.0",
+        "alpinejs": "^3.14.9",
+        "autoprefixer": "^10.4.21",
+        "axios": "^1.8.2",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^2.0.0",
+        "postcss": "^8.5.3",
+        "sass": "^1.99.0",
+        "tailwindcss": "^4.0.0",
+        "tinymce": "^7.6.0",
+        "vite": "^7.0.0"
+    },
+    "dependencies": {
+        "lightgallery": "^2.8.3"
+    }
+}

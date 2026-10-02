@@ -1,0 +1,159 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "${APP_PORT:-8888}:80"
+    volumes:
+      - .:/var/www/html:ro
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["/var/www/html/docker/entrypoint.sh"]
+    command: ["php-fpm"]
+    expose:
+      - "9000"
+    volumes:
+      - .:/var/www/html
+    environment: &app-env
+      INIT_APP: "true"
+      APP_NAME: "${APP_NAME:-Magazines}"
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: "${APP_URL:-http://lvh.me:8888}"
+      SESSION_DOMAIN: "${SESSION_DOMAIN:-}"
+      # Remaining .env values synced by docker/entrypoint.sh on container start.
+      DB_CONNECTION: mysql
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_DATABASE: "${DB_DATABASE:-magazines}"
+      DB_USERNAME: "${DB_USERNAME:-root}"
+      DB_PASSWORD: "${DB_PASSWORD:-secret}"
+      CACHE_STORE: file
+      ENTITY_CACHE_STORE: file
+      SESSION_DRIVER: file
+      SEARCH_DRIVER: redis
+      REDIS_CLIENT: phpredis
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_SEARCH_DB: 0
+      QUEUE_CONNECTION: sync
+      SESSION_DRIVER: redis
+      MAIL_MAILER: smtp
+      MAIL_HOST: mailpit
+      MAIL_PORT: 1025
+      MAIL_USERNAME: "null"
+      MAIL_PASSWORD: "null"
+      MAIL_ENCRYPTION: "null"
+      MAIL_FROM_ADDRESS: "hello@magazines.test"
+      MAIL_FROM_NAME: "${APP_NAME:-Magazines}"
+      MAILPIT_WEB_URL: "http://127.0.0.1:${MAILPIT_UI_PORT:-8025}"
+      RUN_SEEDER: "${RUN_SEEDER:-true}"
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      mailpit:
+        condition: service_started
+    security_opt:
+      - seccomp=unconfined
+    restart: unless-stopped
+
+  mariadb:
+    image: mariadb:10.11
+    ports:
+      - "${MARIADB_PORT:-3307}:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: "${DB_PASSWORD:-secret}"
+      MARIADB_DATABASE: "${DB_DATABASE:-magazines}"
+    # Older Docker Desktop kernels block syscalls MariaDB needs (see MariaDB/mariadb-docker#434)
+    security_opt:
+      - seccomp=unconfined
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 40s
+    restart: unless-stopped
+
+  postgres:
+    image: ${POSTGRES_IMAGE:-magazines-postgres:16}
+    build:
+      context: .
+      dockerfile: docker/postgres/Dockerfile
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    environment:
+      POSTGRES_USER: "${POSTGRES_USERNAME:-magazines}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-secret}"
+      POSTGRES_DB: "${POSTGRES_DATABASE:-magazines}"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    security_opt:
+      - seccomp:unconfined
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USERNAME:-magazines} -d ${POSTGRES_DATABASE:-magazines}"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+
+  # Redis Stack: cache, sessions, entity cache, and RediSearch (FT + vectors).
+  # Optional split: docker compose -f docker-compose.yml -f docker-compose.split-redis.yml up -d
+  redis:
+    image: redis/redis-stack-server:7.4.0-v1
+    ports:
+      - "${REDIS_PUBLISH_PORT:-6380}:6379"
+    environment:
+      REDIS_ARGS: "--save 60 1 --appendonly yes"
+    volumes:
+      - redis_data:/data
+    # Stack startup memory self-test can abort under Docker Desktop default seccomp (exit 134)
+    security_opt:
+      - seccomp=unconfined
+    healthcheck:
+      test: ["CMD", "redis-cli", "FT._LIST"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 15s
+    restart: unless-stopped
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "${MAILPIT_UI_PORT:-8025}:8025"
+      - "${MAILPIT_SMTP_PORT:-1025}:1025"
+    restart: unless-stopped
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: php artisan schedule:work
+    volumes:
+      - .:/var/www/html
+    environment: *app-env
+    depends_on:
+      - app
+      - mariadb
+      - redis
+      - mailpit
+    restart: unless-stopped
+
+volumes:
+  mariadb_data:
+  postgres_data:
+  redis_data:

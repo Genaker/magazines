@@ -1,0 +1,50 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        $driver = Schema::getConnection()->getDriverName();
+
+        if (in_array($driver, ['mysql', 'mariadb'], true)) {
+            DB::statement('ALTER TABLE users MODIFY password VARCHAR(255) NULL');
+
+            return;
+        }
+
+        if ($driver === 'pgsql') {
+            DB::statement('ALTER TABLE users ALTER COLUMN password DROP NOT NULL');
+
+            return;
+        }
+
+        Schema::table('users', function ($table) {
+            $table->string('password')->nullable()->change();
+        });
+    }
+
+    public function down(): void
+    {
+        $driver = Schema::getConnection()->getDriverName();
+
+        if (in_array($driver, ['mysql', 'mariadb'], true)) {
+            DB::statement('ALTER TABLE users MODIFY password VARCHAR(255) NOT NULL');
+
+            return;
+        }
+
+        if ($driver === 'pgsql') {
+            DB::statement('ALTER TABLE users ALTER COLUMN password SET NOT NULL');
+
+            return;
+        }
+
+        Schema::table('users', function ($table) {
+            $table->string('password')->nullable(false)->change();
+        });
+    }
+};

@@ -1,0 +1,33 @@
+<x-admin-layout>
+    <div class="max-w-xl mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">Create category</h1>
+        <form method="POST" action="{{ route('admin.categories.store') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1">Name</label>
+                <input type="text" name="name" value="{{ old('name') }}" class="w-full rounded-md border-gray-300" required>
+            </div>
+
+            @include('partials.admin.category-scope-fields', [
+                'magazines' => $magazines,
+                'selectedMagazineId' => $selectedMagazineId,
+                'selectedParentId' => $selectedParentId,
+            ])
+
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1">Description</label>
+                <textarea name="description" class="w-full rounded-md border-gray-300">{{ old('description') }}</textarea>
+            </div>
+            <div class="mb-6">
+                <label for="category-image" class="block text-sm font-medium mb-1">Image</label>
+                <p class="text-xs text-gray-500 mb-2">Optional cover image, JPG or PNG, max 5 MB.</p>
+                <input type="file"
+                       id="category-image"
+                       name="image"
+                       accept="image/jpeg,image/png,image/webp"
+                       class="block w-full text-sm text-gray-600 file:mr-3 file:rounded-md file:border-0 file:bg-gray-100 file:px-3 file:py-2 file:text-sm file:font-medium file:text-gray-700 hover:file:bg-gray-200">
+            </div>
+            <button type="submit" class="px-4 py-2 bg-gray-900 text-white rounded-md">Save</button>
+        </form>
+    </div>
+</x-admin-layout>

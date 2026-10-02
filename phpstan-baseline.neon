@@ -1,0 +1,757 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/SendSubscriptionDigestCommand.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:isPublished\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Console/Commands/SendSubscriptionDigestCommand.php
+
+		-
+			message: '#^Parameter \#2 \$alias of static method App\\Support\\ActiveAuthorAlias\:\:set\(\) expects App\\Models\\AuthorAlias, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/AuthorAliasController.php
+
+		-
+			message: '#^Parameter \#2 \$alias of static method App\\Support\\ActiveAuthorAlias\:\:set\(\) expects App\\Models\\AuthorAlias, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/AuthorAliasController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/AuthorController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:hasBlocked\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/AuthorController.php
+
+		-
+			message: '#^Negated boolean expression is always false\.$#'
+			identifier: booleanNot.alwaysFalse
+			count: 1
+			path: app/Http/Controllers/AuthorController.php
+
+		-
+			message: '#^Parameter \#1 \$user of method App\\Models\\User\:\:hasBlocked\(\) expects App\\Models\\User, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/AuthorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$authorAlias\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/CommentController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/CommentController.php
+
+		-
+			message: '#^Parameter \#1 \$boolean of function abort_unless expects bool, App\\Models\\User\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/CommentLikeController.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/FollowController.php
+
+		-
+			message: '#^Parameter \#1 \$data of method App\\Support\\AppInstaller\:\:install\(\) expects array\<string, string\>, array\<string, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/InstallController.php
+
+		-
+			message: '#^Parameter \#1 \$recipient of static method App\\Services\\ActivityNotifier\:\:notify\(\) expects App\\Models\\User, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/LikeController.php
+
+		-
+			message: '#^Parameter \#1 \$recipient of static method App\\Services\\ActivityNotifier\:\:notify\(\) expects App\\Models\\User, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Http/Controllers/MagazineJoinRequestController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$authorAlias\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:isRetired\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:trashed\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\PostController\:\:resolveAuthorAlias\(\) should return App\\Models\\AuthorAlias but returns Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Parameter \#1 \$variants of method App\\Services\\ImageService\:\:deleteVariants\(\) expects array\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 4
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Parameter \#1 \$variants of method App\\Services\\ImageService\:\:responsiveSrcset\(\) expects array\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Parameter \#2 \$default of function old expects array\|Illuminate\\Database\\Eloquent\\Model\|string\|null, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Parameter \#2 \$default of function old expects array\|Illuminate\\Database\\Eloquent\\Model\|string\|null, int\<0, max\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Parameter \#2 \$default of function old expects array\|Illuminate\\Database\\Eloquent\\Model\|string\|null, int\<0, max\>\|null given\.$#'
+			identifier: argument.type
+			count: 3
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Parameter \#3 \$existing of method App\\Http\\Controllers\\PostController\:\:resolvePublishedAt\(\) expects Carbon\\Carbon\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ReadingListController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$is_private\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ReadingListController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ReadingListController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:posts\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/ReadingListController.php
+
+		-
+			message: '#^Parameter \#1 \$recipient of static method App\\Services\\ActivityNotifier\:\:notify\(\) expects App\\Models\\User, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/ReadingListController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/SyndicationController.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Api\\V1\\PostResource\:\:\$body\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Api/V1/PostResource.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Http/Resources/Api/V1/PostResource.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Resources/Api/V1/PostResource.php
+
+		-
+			message: '#^Parameter \#1 \$recipient of static method App\\Services\\ActivityNotifier\:\:notify\(\) expects App\\Models\\User, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Listeners/NotifyCommentAuthorOfLike.php
+
+		-
+			message: '#^Parameter \#4 \$post of static method App\\Services\\ActivityNotifier\:\:notify\(\) expects App\\Models\\Post\|null, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Listeners/NotifyCommentAuthorOfLike.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Listeners/NotifyCommentParticipants.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Listeners/NotifyCommentParticipants.php
+
+		-
+			message: '#^Parameter \#2 \$actor of static method App\\Services\\ActivityNotifier\:\:notify\(\) expects App\\Models\\User, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 3
+			path: app/Listeners/NotifyCommentParticipants.php
+
+		-
+			message: '#^Parameter \#4 \$post of static method App\\Services\\ActivityNotifier\:\:notify\(\) expects App\\Models\\Post\|null, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 3
+			path: app/Listeners/NotifyCommentParticipants.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:followers\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/AuthorAlias.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:following\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/AuthorAlias.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Relations\\HasMany\:\:published\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Models/AuthorAlias.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Models/AuthorAlias.php
+
+		-
+			message: '#^Parameter \#5 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/AuthorAlias.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Category\:\:\$depth\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Category.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:each\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: mixed, Closure\(App\\Models\\Category\)\: App\\Models\\Category given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/Category.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/Category.php
+
+		-
+			message: '#^Parameter \#1 \$comments of static method App\\Models\\Comment\:\:buildTree\(\) expects Illuminate\\Database\\Eloquent\\Collection\<int, App\\Models\\Comment\>, Illuminate\\Database\\Eloquent\\Collection\<int, static\(App\\Models\\Comment\)\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Cannot call method isFuture\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/LoginLink.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Relations\\Pivot\:\:\$role\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Magazine.php
+
+		-
+			message: '#^Parameter \#4 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/Magazine.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Post\:\:\$body\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Cannot call method isFuture\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Generic type Illuminate\\Database\\Eloquent\\Relations\\HasMany\<App\\Models\\PostGalleryItem\> in PHPDoc tag @return does not specify all template types of class Illuminate\\Database\\Eloquent\\Relations\\HasMany\: TRelatedModel, TDeclaringModel$#'
+			identifier: generics.lessTypes
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:galleryItems\(\) should return Illuminate\\Database\\Eloquent\\Relations\\HasMany\<App\\Models\\PostGalleryItem\> but returns Illuminate\\Database\\Eloquent\\Relations\\HasMany\<App\\Models\\PostGalleryItem, \$this\(App\\Models\\Post\)\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 3
+			path: app/Models/Post.php
+
+		-
+			message: '#^Parameter \#5 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Parameter \#6 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Parameter \#1 \$variants of method App\\Services\\ImageService\:\:responsiveSrcset\(\) expects array\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/PostGalleryItem.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$username\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/PostRedirect.php
+
+		-
+			message: '#^Method App\\Models\\ReadingList\:\:defaultForUser\(\) should return App\\Models\\ReadingList but returns Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Models/ReadingList.php
+
+		-
+			message: '#^Cannot call method isPast\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/RegistrationInvite.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Relations\\HasMany\:\:published\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Models/User.php
+
+		-
+			message: '#^Cannot call method isAdmin\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Method App\\Models\\User\:\:primaryAlias\(\) should return App\\Models\\AuthorAlias but returns Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Models/User.php
+
+		-
+			message: '#^Parameter \#5 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Notifications/AuthorStoryDigest.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Notifications/AuthorStoryDigest.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Notifications/AuthorStoryDigest.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Support\\Collection\<int, App\\Models\\SubscriptionDigestItem\>\:\:loadMissing\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Notifications/AuthorStoryDigest.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Notifications/CategoryRequestReviewed.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Notifications/CategoryRequestSubmitted.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$username\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Notifications/UserActivity.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Post\:\:\$body\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Observers/PostObserver.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int\<min, \-1\>\|int\<1, max\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Observers/PostObserver.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Observers/UserObserver.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$allow_comments\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Policies/CommentPolicy.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$user_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Policies/CommentPolicy.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:hasBlocked\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Policies/CommentPolicy.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:hasBlocked\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Policies/PostPolicy.php
+
+		-
+			message: '#^Cannot call method isFuture\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Policies/PostPolicy.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/AuthorSubscriptionNotifier.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:hasBlocked\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Services/AuthorSubscriptionNotifier.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:storySubscribers\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Services/AuthorSubscriptionNotifier.php
+
+		-
+			message: '#^Parameter \#1 \$user of method App\\Models\\User\:\:hasBlocked\(\) expects App\\Models\\User, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/AuthorSubscriptionNotifier.php
+
+		-
+			message: '#^Parameter \#2 \$author of class App\\Notifications\\AuthorStoryPublished constructor expects App\\Models\\User, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/AuthorSubscriptionNotifier.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Post\:\:\$body\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Services/AutosaveService.php
+
+		-
+			message: '#^Parameter \#1 \$variants of method App\\Services\\ImageService\:\:deleteVariants\(\) expects array\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Services/AutosaveService.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\:\:published\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Services/FeedService.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\<Illuminate\\Database\\Eloquent\\Model\>\:\:published\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Services/FeedService.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$parts of static method App\\Support\\EntityCache\:\:key\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/FeedService.php
+
+		-
+			message: '#^Parameter \#1 \$variants of method App\\Services\\ImageService\:\:deleteVariants\(\) expects array\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Services/GalleryService.php
+
+		-
+			message: '#^Method App\\Services\\ImageService\:\:loadImage\(\) never returns resource so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: app/Services/ImageService.php
+
+		-
+			message: '#^Method App\\Services\\PostCreator\:\:resolveAuthorAlias\(\) should return App\\Models\\AuthorAlias but returns Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/PostCreator.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$is_banned\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Services/Search/AuthorSearchDocumentBuilder.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>is_banned" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Services/Search/AuthorSearchDocumentBuilder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Search/PostSearchDocumentBuilder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$username\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Search/PostSearchDocumentBuilder.php
+
+		-
+			message: '#^Cannot call method getTimestamp\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Services/Search/PostSearchDocumentBuilder.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>slug" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Services/Search/PostSearchDocumentBuilder.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>username" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Services/Search/PostSearchDocumentBuilder.php
+
+		-
+			message: '#^Parameter \#1 \$alias of method App\\Services\\Search\\RedisSearchDriver\:\:indexAuthor\(\) expects App\\Models\\AuthorAlias, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Search/RedisSearchDriver.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Post\:\:\$body\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Search/SearchPostContent.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Services/Search/SearchPostContent.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Services/Search/SearchPostContent.php
+
+		-
+			message: '#^Method App\\Support\\ActiveAuthorAlias\:\:resolve\(\) should return App\\Models\\AuthorAlias but returns Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Support/ActiveAuthorAlias.php
+
+		-
+			message: '#^Parameter \#2 \$array of function implode expects array, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Support/AppInstaller.php
+
+		-
+			message: '#^Offset 1 on array\{list\<string\>, list\<non\-empty\-string\>\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Support/CommentMentions.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and null will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Support/EntityCache.php
+
+		-
+			message: '#^Unsafe call to private method App\\Support\\Features\:\:assertDefined\(\) through static\:\:\.$#'
+			identifier: staticClassAccess.privateMethod
+			count: 2
+			path: app/Support/Features.php
+
+		-
+			message: '#^Unsafe call to private method App\\Support\\Features\:\:storageKey\(\) through static\:\:\.$#'
+			identifier: staticClassAccess.privateMethod
+			count: 3
+			path: app/Support/Features.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:moderators\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: app/Support/ModeratorAssigner.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(Model&object\{moderators\(\)\: BelongsToMany\<User, covariant Model\>\}  \$model\)\: Unexpected token "\(", expected ''\:'' at offset 42 on line 2$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: app/Support/ModeratorAssigner.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Notifications\\Notification\:\:onQueue\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Support/NotificationSender.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Post\:\:\$body\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Support/Seo.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Support/Seo.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Support/Seo.php
+
+		-
+			message: '#^Parameter \#2 \$variants of static method App\\Support\\Seo\:\:withImageMeta\(\) expects array\<string, string\>\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Support/Seo.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Support/Seo.php
+
+		-
+			message: '#^Parameter \#1 \$key of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:contains\(\) expects \(callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: bool\)\|Illuminate\\Database\\Eloquent\\Model\|int\|string, Closure\(App\\Models\\Tag\)\: bool given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Support/TaxonomyModerator.php
+
+		-
+			message: '#^Unsafe call to private method App\\Support\\TaxonomyModerator\:\:moderatedCategoryIds\(\) through static\:\:\.$#'
+			identifier: staticClassAccess.privateMethod
+			count: 2
+			path: app/Support/TaxonomyModerator.php

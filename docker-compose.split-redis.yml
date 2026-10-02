@@ -1,0 +1,46 @@
+# Optional: plain Redis for cache/sessions + dedicated Redis Stack for search.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.split-redis.yml up -d
+#
+# App env:
+#   REDIS_HOST=redis
+#   REDIS_SEARCH_HOST=redis-search
+#   REDIS_SEARCH_PORT=6379
+
+services:
+  redis:
+    image: redis:7-alpine
+    command: redis-server --save 60 1 --appendonly yes
+
+  redis-search:
+    image: redis/redis-stack-server:7.4.0-v1
+    ports:
+      - "${REDIS_SEARCH_EXTERNAL_PORT:-6381}:6379"
+    environment:
+      REDIS_ARGS: "--save 60 1 --appendonly yes"
+    volumes:
+      - redis_search_data:/data
+    security_opt:
+      - seccomp=unconfined
+    healthcheck:
+      test: ["CMD", "redis-cli", "FT._LIST"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 15s
+    restart: unless-stopped
+
+  app:
+    environment:
+      REDIS_SEARCH_HOST: redis-search
+      REDIS_SEARCH_PORT: 6379
+      REDIS_SEARCH_DB: 0
+
+  scheduler:
+    environment:
+      REDIS_SEARCH_HOST: redis-search
+      REDIS_SEARCH_PORT: 6379
+      REDIS_SEARCH_DB: 0
+
+volumes:
+  redis_search_data:

@@ -1,0 +1,32 @@
+---
+description: Magazines Laravel conventions — tests, locales, and browser verification
+alwaysApply: true
+---
+
+# Magazines project
+
+- **Stack:** Laravel 11, Blade, Tailwind, Playwright e2e, PHPUnit.
+- **Locale codes:** Ukrainian uses `ua` (ISO 3166-1 alpha-2); translation files in `lang/ua/`.
+- **Tests:** Add PHPUnit feature/unit tests and Playwright e2e for user-facing changes. Run `composer test` and `composer analyse` (Docker) and `npx playwright test` from `tests/e2e`.
+- **Browser:** Verify UI changes with Browser DevTools MCP before finishing.
+- **Scope:** Minimal diffs; match existing patterns (controllers, `SiteLocale`, entity cache, `@feature` gates).
+- **Schema migrations:** All files are version-prefixed (`V00001_description.php`). New: `php artisan schema:make description`. Reinstall: `php artisan schema:reinstall --seed`. Status: `php artisan schema:version`.
+- **Docker local DB:** After adding or changing schema migrations, apply them to the running stack: `./scripts/docker-artisan.sh migrate --force` (or restart the `app` container so entrypoint migrates). PHPUnit/e2e test DBs migrate on their own; **localhost:8888 uses the Docker `magazines` DB** and does not pick up new migrations until you run migrate.
+
+## Docblocks
+
+Add a short docblock comment to every **class** and **method/function** you implement or touch in a meaningful way.
+
+- **Classes:** one line — what the class is responsible for.
+  ```php
+  /** Registers scheduled tasks from config/schedule.php on the Laravel scheduler. */
+  class ScheduleRegistrar
+  ```
+- **Methods:** one line — what the method does (business purpose, not a restatement of the name).
+  ```php
+  /** @return Collection<int, Tag> */
+  public function popularTagCloud(int $limit = 20): Collection
+  ```
+- **Private helpers:** document when behavior is non-obvious; `@param` / `@return` when the signature alone is unclear.
+- **Skip** docblocks only for trivial one-liners that are already obvious from name + types (e.g. simple accessors).
+- Match existing project tone: concise, present tense, no redundant `@param` when PHP types are explicit.
